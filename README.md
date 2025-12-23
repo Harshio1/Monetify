@@ -41,7 +41,7 @@ No installation required — everything runs in your browser.
 ## 🧩 CycleGAN Architecture Overview
 
 Below is a simplified visual diagram of how CycleGAN works:
-Real Photo (X) ───► Generator G ───► Monet Style (Y') ───► Reconstructed X ◄── Generator F ◄── Monet Image (Y)
+Real Photo (X) ───► Generator G ───► Monet Style (Y') ───► Monet Image (Y) ───► Generator F ───► Reconstructed X
 
 
 ### 🔍 Key Components
