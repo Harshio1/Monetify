@@ -1,4 +1,4 @@
-# 🎨 Monet Style Transfer (CycleGAN)
+# 🎨 Monetify – CycleGAN-Based Artistic Style Transfer
 
 This project transforms ordinary images into **Claude Monet–style paintings** using a CycleGAN-based neural network trained on the Monet dataset.  
 Think of it as an AI-powered artistic filter — upload a photo or use your **webcam** to take one, and the model reimagines it in Monet’s dreamy, impressionist style!
