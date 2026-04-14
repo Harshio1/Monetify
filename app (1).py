@@ -1,6 +1,7 @@
 import gradio as gr
 import tensorflow as tf
 import numpy as np
+import os
 from tensorflow.keras.models import load_model
 
 # ------------------------------
@@ -54,7 +55,7 @@ def generate_monet(image):
 
 
 # ------------------------------
-# Gradio UI with CAMERA INPUT
+# Gradio UI
 # ------------------------------
 with gr.Blocks(title="Monet Style Transfer") as demo:
 
@@ -68,11 +69,10 @@ with gr.Blocks(title="Monet Style Transfer") as demo:
 
     with gr.Row():
         input_img = gr.Image(
-        label="Upload or Capture Photo",
-        sources=["upload", "webcam"],   # must be list
-        type="pil"
-)
-
+            label="Upload or Capture Photo",
+            sources=["upload", "webcam"],
+            type="numpy"   # ⚠️ IMPORTANT CHANGE
+        )
 
         output_img = gr.Image(
             type="numpy",
@@ -82,4 +82,9 @@ with gr.Blocks(title="Monet Style Transfer") as demo:
     btn = gr.Button("Generate Monet Style")
     btn.click(fn=generate_monet, inputs=input_img, outputs=output_img)
 
-demo.launch()
+
+# ------------------------------
+# Render launch fix
+# ------------------------------
+port = int(os.environ.get("PORT", 10000))
+demo.launch(server_name="0.0.0.0", server_port=port)
